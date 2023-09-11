@@ -1,0 +1,71 @@
+﻿@model Food.Models.Payment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/Order_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment</title>
+</head>
+<body>
+    <section id="Home">
+        <nav>
+            <div class="logo">
+                <img src="~/Indexemages/logo.png">
+            </div>
+
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+                <li><a asp-controller="Home" asp-action="Menu">Menu</a></li>
+                <li><a asp-controller="Acount" asp-action="Logout"> Logout</a></li>
+
+                <li><a asp-controller="Acount" asp-action="FeedBack">Review</a></li>
+                <li><a asp-controller="Acount" asp-action="order">Order</a></li>
+                <li><a asp-controller="Acount" asp-action="Regester"> Regester</a></li>
+                <li><a asp-controller="Acount" asp-action="Login">Login</a></li>
+            </ul>
+
+
+        </nav>
+    </section>
+
+
+<hr />
+    <div class="order">
+        <div class="order_main">
+        <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="input"></div>
+                <div class="input">
+                    <p>Customer Name</p>
+                <input asp-for="CustomerName" class="form-control" />
+                
+            </div>
+                <div class="input">
+                    <p>Payment Type</p>
+                <input asp-for="PaymentType" class="form-control" />
+                
+            </div>
+                <div class="input">
+                    <p>Card Number</p>
+                <input asp-for="CardNum"  />
+               
+            </div>
+            
+           
+                    <input type="submit" value="Buy naw" class="order_btn" />
+           
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿@model List<Items>
+@{
+    ViewData["Title"] = "Menue";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="~/css/Menu_stytle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="Home">
+        <nav>
+            <div class="logo">
+                <img src="~/Indexemages/logo.png">
+            </div>
+
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+                <li><a asp-controller="Home" asp-action="Menu">Menu</a></li>
+
+                <li><a asp-controller="Order" asp-action="Create" class="menu_btn">Order Now</a></li>
+                <li><a asp-controller="Acount" asp-action="Regester"> Regester</a></li>
+                <li><a asp-controller="Acount" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Acount" asp-action="Logout"> Logout</a></li>
+
+              </ul>
+        </nav>
+    </section>
+
+
+    <!--Menu-->
+    <form asp-controller="Item" asp-action="Search" method="post" style="align-content:center;"dir="rtl" >
+        <p>
+            <label class="align-content-md-between" style="width:200px;">Name: </label>
+            <input class="form-control" name="Title" style="width:200px;align-content: center;" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </p>
+    </form>
+    
+    <div class="menu" id="Menu">
+        <h1>Our<span>Menu</span></h1>
+
+        <div class="menu_box">
+            
+
+           
+
+           
+
+            @foreach(var item in Model)
+            {
+
+            <div class="menu_card">
+
+                <div class="menu_image">
+                    <img src="~/imgg/@item.Item_Pic" />
+                </div>
+
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="menu_info">
+                    <h2> @Html.DisplayFor(modelItem => item.ItemName)</h2>
+                    
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <h3> @Html.DisplayFor(modelItem => item.ItemPrice)</h3>
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        
+                    </div>
+                    <a asp-controller="Order" asp-action="Create" class="menu_btn">Order Now</a>
+                        
+                </div>
+
+            </div>
+            }
+
+          </div>
+          </div>
+
+</body>
+</html>

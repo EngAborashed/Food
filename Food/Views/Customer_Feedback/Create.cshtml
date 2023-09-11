@@ -1,0 +1,95 @@
+﻿@model Food.Models.Customer_Feedback
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="~/css/FeedBack_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <section id="Home">
+        <nav>
+            <div class="logo">
+                <img src="~/Indexemages/logo.png">
+            </div>
+
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+                <li><a asp-controller="Home" asp-action="Menu">Menu</a></li>
+               
+                <li><a asp-controller="Acount" asp-action="Logout"> Logout</a></li>
+
+              
+                <li><a asp-controller="Acount" asp-action="Regester"> Regester</a></li>
+                <li><a asp-controller="Acount" asp-action="Login">Login</a></li>
+            </ul>
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </nav>
+    </section>
+    <!--Order-->
+
+    <div class="order" id="Order">
+        <h1><span>Rate</span>Us</h1>
+
+        <div class="order_main">
+
+            <div class="order_image">
+                <img src="~/Indexemages/order_image.png">
+            </div>
+
+            <form asp-controller="Customer_Feedback" asp-action="Create" method="post">
+
+                <div class="input">
+                    <p>First Name</p>
+                    <input asp-for="FirstName" type="text" placeholder="First Name">
+                </div>
+                <div class="input">
+                    <p>Last Name</p>
+                    <input asp-for="LastName" type="text" placeholder="Last Name">
+                </div>
+
+                <div class="input">
+                    <p>Cleens</p>
+                    <input asp-for="Cleens" type="number" placeholder="Cleens">
+                </div>
+
+                <div class="input">
+                    <p>FoodQuality</p>
+                    <input asp-for="FoodQuality" type="number" placeholder="FoodQuality">
+                </div>
+                <div class="input">
+                    <p>Servis</p>
+                    <input asp-for="Service" type="number" placeholder="Servis">
+                </div>
+                <div class="input">
+                    <p>Suggetions</p>
+                    <input asp-for="Suggetions" placeholder="Suggetions">
+                </div>
+
+                <input type="submit" name="" value="Submit" class="order_btn">
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model Customer
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Rigester</title>
+    <link rel="stylesheet" href="~/css/Login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    
+</head>
+
+
+
+
+
+      
+      
+    
+    <body>
+    <section id="Home">
+        <nav>
+            <div class="logo">
+                <img src="~/Indexemages/logo.png">
+            </div>
+
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                
+                <li><a asp-controller="Home" asp-action="Menu">Menu</a></li>
+                
+               
+               
+                <li><a asp-controller="Acount" asp-action="Login">Login</a></li>
+            </ul>
+         
+
+        </nav>
+    </section>
+       <pre>
+
+
+
+
+
+
+       </pre>
+
+        <div class="box">
+
+            <h2>Sign Up</h2>
+
+        <form asp-controller="Acount" asp-action="Regester" enctype="multipart/form-data" method="post">
+                <input type="hidden" asp-for="CustomerId">
+                <div class="inputBox">
+                    <input asp-for="FirstName">
+                    <label asp-for="FirstName">first name</label>
+                </div>
+                <div class="inputBox">
+                    <input asp-for="LastName">
+                    <label asp-for="LastName">last name</label>
+
+                </div>
+                <div class="inputBox">
+                    <input asp-for="Email">
+                    <label asp-for="Email">E-mail</label>
+                </div>
+
+                <div class="inputBox">
+                    <input type="password" asp-for="Password">
+                    <label>Password</label>
+
+                </div>
+                <div class="inputBox">
+                    <input type="password" asp-for="ConfirmPassword">
+                    <label>Confirm Password</label>
+
+                </div>
+            <div class="inputBox">
+                <input asp-for="uesrpicture" type="file" name="ImgFile" />
+                <label>Picture</label>
+
+            </div>
+
+                <input type="submit" name="" value="Submit" />
+            </form>
+        </div>
+
+
+
+    </body>
+</html>
+
